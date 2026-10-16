@@ -47,6 +47,9 @@ Clash Display, Work Sans and IBM Plex Mono; swap them in `master.Theme` for font
 - **Design rules:** taste-skill's principles restated for slides (one accent, three
   faces, no em dashes, 45 words a slide, motion only with a reason), with a checklist
   to run before delivery.
+- **Vector first:** asks for SVG versions up front. Logos go in whole as SVG pictures;
+  icons, arrows and diagram parts become native PowerPoint freeforms you can recolour
+  (`svgshapes.py`); gradients are native fills.
 - **Image guide:** every picture is planned as a frame. The guide gives its exact pixel
   size at 1080p and 4K, the topic, and a Pexels.com proposition with an exact-size crop
   URL. See [the demo's guide](examples/demo/image-guide.md).
@@ -80,7 +83,8 @@ skills/decksmith/
     masters.md                theme, master, layouts, placeholders, font gotchas
     xml-reference.md          the XML PowerPoint writes, and how to get more from PowerPoint itself
   scripts/
-    master.py motion.py images.py                  the libraries
+    master.py motion.py images.py svgshapes.py     the libraries
+    svg_logos.ps1                                  SVG logos through PowerPoint
     validate.py render.py ppt_render.ps1 image_guide.py   the checks
     build_demo.py selftest.py                      the worked example and the self-test
   assets/base-16x9.pptx       empty 16:9 package saved by PowerPoint

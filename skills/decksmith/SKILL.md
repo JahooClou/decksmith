@@ -41,6 +41,8 @@ python-pptx 1.0.2, Python 3.14). The demo is `Z:\Claude\decksmith-demo\`.
 | `image_guide.py` | writes the image guide (markdown + JSON) for a deck |
 | `validate.py` | structural errors PowerPoint would repair or drop, plus the design-rule warnings |
 | `render.py` + `ppt_render.ps1` | PowerPoint check, slide PNGs, contact sheet, optional MP4 and frames |
+| `svgshapes.py` | SVG to native PowerPoint freeforms (icons, arrows, diagram parts), `trim_svg` for logos |
+| `svg_logos.ps1` | swaps pictures for whole SVG logos through PowerPoint (box, name, z-order, animation kept) |
 | `build_demo.py` | the demo deck, also the worked example to copy from |
 | `selftest.py` | builds a deck with every effect and feature, validates and renders it |
 
@@ -62,7 +64,9 @@ section and give them `!!` names now.
 three faces at most, the master's text styles, and the layouts the outline needs
 (`references/masters.md`).
 
-**4. Plan every picture as a slot** (`images.add_slot`) with a key, a topic and a Pexels
+**4. Ask for vectors, then plan every picture as a slot.** First ask the user whether they have SVG (or AI / EPS)
+versions of the logos, icons and graphics: SVG is the preferred format over PNG (see "Vector first" below).
+Then plan every photo (`images.add_slot`) with a key, a topic and a Pexels
 query. Find a Pexels proposition for each (`references/images.md`): exact px for the
 frame at 1080p and 4K, original size large enough, orientation right, colours in the
 palette. **Ask before downloading**, naming the photos, the source and the rough size;
@@ -153,6 +157,26 @@ Left-aligned, asymmetric compositions above VARIANCE 4; no three equal cards; 0.
 margins. Real pictures, planned to the pixel, in the image guide. Every effect has a
 reason; Morph first, builds only where order matters, one entrance family, ease-out,
 0.4-0.9 s builds, 0.8-1.6 s Morph.
+
+---
+
+## Vector first (owner's rule)
+
+- **Ask** at the start whether SVG versions exist, and prefer SVG over PNG for every logo, icon and graphic.
+  Raster only for photos, renders, and marks that have no vector source; say in the delivery note which ones
+  stayed raster and why.
+- **Logos stay whole.** Insert a logo as an SVG picture (PowerPoint keeps the vector plus its own PNG fallback);
+  never break a logo into shapes. Trim its viewBox to the artwork first (`svgshapes.trim_svg`), place a
+  stand-in picture in the build, then run `svg_logos.ps1`, which swaps it for the SVG and keeps the box, name,
+  stacking order and animation. python-pptx cannot insert SVG on its own.
+- **Every other vector element becomes native shapes**, so it recolours, scales and animates in PowerPoint:
+  icons, arrows, dividers, diagram parts. `svgshapes.add_svg_shape(slide, svg, x, y, w, h, name=..., colour=...)`
+  writes one freeform per single-colour icon (one fill and one line colour) and a group for multi-colour art.
+  Icons: take the library's SVG (for react-icons, `renderToStaticMarkup`), never a PNG render.
+- **Gradients are native** gradient fills (`a:gradFill`) on shapes, not gradient PNGs.
+- PowerPoint COM cannot convert an SVG to shapes (`Ungroup` on an `msoGraphic` is refused; Convert to Shape is
+  UI only), which is why `svgshapes.py` exists. Converting an existing deck: replace each `p:pic` with the new
+  `p:sp` keeping its `cNvPr id` and `a:xfrm`, so animations (which target the id) stay attached.
 
 ---
 

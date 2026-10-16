@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.1.0 (2026-10-16)
+
+- Vector first: ask the user for SVG versions up front and prefer them to PNG. Logos stay whole as SVG pictures;
+  every other vector element (icons, arrows, diagram parts) becomes native, recolourable PowerPoint shapes;
+  gradients are native fills.
+- `svgshapes.py`: SVG to DrawingML freeforms (paths, arcs, basic shapes, CSS classes, transforms; one shape per
+  colour run), `add_svg_shape` for python-pptx slides, `trim_svg` for logos.
+- `svg_logos.ps1`: swaps pictures for SVG logos through PowerPoint on slides and layouts, keeping box, name,
+  stacking order and animation.
+
 ## 1.0.1 (2026-10-16)
 
 - Installed as a plugin; SKILL.md says where the scripts live and that the repo is the source.

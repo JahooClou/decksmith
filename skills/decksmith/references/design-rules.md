@@ -129,7 +129,9 @@ question, for example "is this presented live or sent as a file?"
   (references/images.md): exact px, topic, and a Pexels proposition for each.
 - No fake screenshots built from rectangles. Use a real screenshot, a real photo, or nothing.
 - No labels or pills laid over photos. Put a caption under the photo, or leave it out.
-- Icons come from one library with one stroke weight. Never draw icon paths by hand.
+- Icons come from one library with one stroke weight. Never draw icon paths by hand. Icons are native
+  PowerPoint shapes converted from the library's SVG (`svgshapes.py`), never PNG pictures, so they recolour.
+- Logos are whole SVG pictures (`svg_logos.ps1`), never PNG when a vector exists, never broken into shapes.
 
 ## 7. Motion [taste-skill §5 "motion must be motivated", §6.B]
 
