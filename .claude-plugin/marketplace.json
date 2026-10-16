@@ -8,7 +8,7 @@
     {
       "name": "decksmith",
       "description": "Animated PowerPoint built from code and checked in PowerPoint: Morph, builds, motion paths, triggers, Slide Zoom, masters, design rules and a Pexels image guide.",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "source": "./",
       "author": {
         "name": "JahooClou"

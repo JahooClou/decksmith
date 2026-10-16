@@ -297,7 +297,7 @@ So check every deck in PowerPoint before it goes in front of people; the render 
     morph_name(block(s7, 8.0, 0, 5.333, 7.5), "pop")
     close = text(s7, 0.75, 2.5, 6.6, 2.4, "Build it, render it, then watch it in PowerPoint.",
                  font=DISPLAY, size=46, line=0.95, tracking=-1.0, anchor=MSO_ANCHOR.BOTTOM)
-    path7 = text(s7, 0.75, 5.15, 6.8, 0.4, "Z:\\Claude\\.claude\\skills\\decksmith", font=MONO, size=15, color=GREY)
+    path7 = text(s7, 0.75, 5.15, 6.8, 0.4, "github.com/JahooClou/decksmith", font=MONO, size=15, color=GREY)
     btn7 = s7.shapes.add_shape(MSO_SHAPE.RECTANGLE, Inches(0.75), Inches(5.9), Inches(2.7), Inches(0.62))
     btn7.fill.solid()
     btn7.fill.fore_color.rgb = rgb(INK)
@@ -318,7 +318,7 @@ So check every deck in PowerPoint before it goes in front of people; the render 
     set_transition(s7, "morph", dur=1.6)
     set_notes(s7, """The square from slide 6 grows into the whole right side: one more Morph, and the deck closes on the colour it opened with.
 
-The button jumps back to slide 1 in the show. The skill lives at the path on screen.""")
+The button jumps back to slide 1 in the show. The skill is on GitHub at the address on screen.""")
 
     set_sections(prs, [("Opening", [s1]), ("Motion", [s2, s3, s4]), ("Navigation", [s5]), ("Limits", [s6, s7])])
     theme_notes(prs, T)

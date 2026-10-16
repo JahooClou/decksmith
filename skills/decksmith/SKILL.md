@@ -28,7 +28,10 @@ python-pptx 1.0.2, Python 3.14). The demo is `Z:\Claude\decksmith-demo\`.
   read-only, closes only that deck, and quits PowerPoint only if it was not running
   before. Never call `Quit()` or close presentations you did not open. Never open the
   user's own decks with a window or for writing without being asked.
-- Scripts live in `scripts/`. Import them with `sys.path.insert(0, <skill>/scripts)`.
+- Scripts live in `scripts/` under the skill's base directory (given when the skill
+  loads; as a plugin it is `~/.claude/plugins/cache/decksmith/decksmith/<version>/skills/decksmith`).
+  Import them with `sys.path.insert(0, <base>/scripts)`. Edit the source in the repo
+  (`Z:\Claude\decksmith`, github.com/JahooClou/decksmith), never in the plugin cache.
 
 | Script | Job |
 | --- | --- |

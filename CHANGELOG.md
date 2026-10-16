@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.0.1 (2026-10-16)
+
+- Installed as a plugin; SKILL.md says where the scripts live and that the repo is the source.
+- Demo slide 7 points at the GitHub repo instead of a local folder; demo deck and README images re-rendered.
+
 ## 1.0.0 (2026-10-16)
 
 First release.
