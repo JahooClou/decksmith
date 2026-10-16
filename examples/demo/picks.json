@@ -1,0 +1,22 @@
+{
+  "hero": {
+    "pexels_id": 18473029,
+    "topic": "Night traffic drawn as light trails on a curved city road",
+    "query": "light trails long exposure",
+    "title": "Car Lights Trails on Road Curve in City",
+    "photographer": "King Ho",
+    "photographer_url": "https://www.pexels.com/@king/",
+    "width": 4016,
+    "height": 6016
+  },
+  "beam": {
+    "pexels_id": 20728625,
+    "topic": "A projector beam cutting through a dark room",
+    "query": "projector light beam dark room",
+    "title": "Light of Projector",
+    "photographer": "Natasha Latinovska",
+    "photographer_url": "https://www.pexels.com/@natasha-latinovska-1052962659/",
+    "width": 4000,
+    "height": 6000
+  }
+}

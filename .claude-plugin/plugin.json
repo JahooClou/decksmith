@@ -1,0 +1,22 @@
+{
+  "name": "decksmith",
+  "description": "Animated PowerPoint built from code and checked in PowerPoint: Morph, entrance/emphasis/exit effects, motion paths, triggers, Slide Zoom, masters and themes, plus taste-driven design rules and an image guide (exact px, topic, Pexels pick) for every picture.",
+  "version": "1.0.0",
+  "author": {
+    "name": "JahooClou"
+  },
+  "homepage": "https://github.com/JahooClou/decksmith",
+  "repository": "https://github.com/JahooClou/decksmith",
+  "license": "MIT",
+  "keywords": [
+    "powerpoint",
+    "pptx",
+    "morph",
+    "animation",
+    "presentation",
+    "slides",
+    "python-pptx",
+    "skills"
+  ],
+  "skills": "./skills"
+}
